@@ -92,6 +92,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -106,17 +107,21 @@ nav,
 section {
   display: block;
 }
+
 body {
   line-height: 1;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -124,49 +129,78 @@ q:after {
   content: "";
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
+
 * {
   box-sizing: border-box;
 }
 
-html,
+:root,
 body {
   height: 100%;
   padding: 2% 5%;
+  font-size: 16px;
+
 }
 
-h1 {
-  font-size: 70px;
+img {
+  width: 100%
 }
+
 
 header {
   border: 1px solid black;
   display: flex;
   justify-content: space-between;
-}
 
-.TK {
-  display: flex;
-  align-items: center;
-}
+  h1 {
+    font-size: 70px;
 
-header nav {
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 30%;
-}
+    @media(max-width:500px) {
+      font-size: 3rem
+    }
+  }
 
-header nav a {
-  text-decoration: none;
-  color: grey;
+  .TK {
+    display: flex;
+    align-items: center;
+
+  }
+
+  nav {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+
+    a {
+      text-decoration: none;
+      color: grey;
+    }
+
+  }
+
+  .mylogoo2 {
+    width: 10%;
+
+    @media(max-width:500px) {
+      display: none
+    }
+  }
+
+  @media(max-width:500px) {
+    flex-direction: column;
+    align-items: center;
+
+  }
 }
 
 h3 {
@@ -178,31 +212,51 @@ h3 {
   margin: 2% 0;
 }
 
-.logo {
-  width: 20%;
-  height: 10%;
-}
+
 
 .skills {
   border: 1px solid blue;
   display: flex;
   justify-content: space-around;
+  margin-bottom: 2%;
 
 }
 
-ul {list-style: circle;
+.footy {
+  width: 20%;
+}
 
+
+
+ul {
+  list-style: circle;
 }
 
 .skills2 {
-	border: 1px solid red;
-	text-align: center;
-	
-}
-
-.arsenal {
-	width: 20%;
-	height:10%;
+  border: 1px solid red;
+  text-align: center;
 }
 
 
+
+.lastbit {
+  border: 1px solid green;
+  display: flex;
+  text-align: center;
+  margin-top: 3%;
+
+  @media(max-width:500px) {
+    flex-direction: column;
+  }
+}
+
+
+.work,
+.Employment,
+.Hobbies {
+  padding: 2%;
+}
+
+footer {
+  border: 1px solid black;
+}

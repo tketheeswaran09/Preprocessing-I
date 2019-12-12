@@ -130,20 +130,29 @@ table {
 * {
   box-sizing: border-box;
 }
-html,
+:root,
 body {
   height: 100%;
   padding: 2% 5%;
+  font-size: 16px;
 }
-h1 {
-  font-size: 70px;
+img {
+  width: 100%;
 }
 header {
   border: 1px solid black;
   display: flex;
   justify-content: space-between;
 }
-.TK {
+header h1 {
+  font-size: 70px;
+}
+@media (max-width: 500px) {
+  header h1 {
+    font-size: 3rem;
+  }
+}
+header .TK {
   display: flex;
   align-items: center;
 }
@@ -159,6 +168,20 @@ header nav a {
   text-decoration: none;
   color: grey;
 }
+header .mylogoo2 {
+  width: 10%;
+}
+@media (max-width: 500px) {
+  header .mylogoo2 {
+    display: none;
+  }
+}
+@media (max-width: 500px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 h3 {
   font-size: 20px;
 }
@@ -166,14 +189,14 @@ h3 {
   border: 1px solid green;
   margin: 2% 0;
 }
-.logo {
-  width: 20%;
-  height: 10%;
-}
 .skills {
   border: 1px solid blue;
   display: flex;
   justify-content: space-around;
+  margin-bottom: 2%;
+}
+.footy {
+  width: 20%;
 }
 ul {
   list-style: circle;
@@ -182,7 +205,22 @@ ul {
   border: 1px solid red;
   text-align: center;
 }
-.arsenal {
-  width: 20%;
-  height: 10%;
+.lastbit {
+  border: 1px solid green;
+  display: flex;
+  text-align: center;
+  margin-top: 3%;
+}
+@media (max-width: 500px) {
+  .lastbit {
+    flex-direction: column;
+  }
+}
+.work,
+.Employment,
+.Hobbies {
+  padding: 2%;
+}
+footer {
+  border: 1px solid black;
 }
