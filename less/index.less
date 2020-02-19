@@ -137,8 +137,43 @@ table {
 
 /* Set every element's box-sizing to border-box */
 
+@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+@textfont: 'Lora', serif;
+
+:root {
+  font-size: 32px;
+}
+
+.redborder() {
+  border: 1px solid red;
+}
+
 * {
   box-sizing: border-box;
+}
+
+@darkpink: #740023;
+
+.darktext() {
+  color: yellowgreen;
+  font-size: 1.5rem;
+}
+
+@phone: ~"(max-width:500px)"
+
+
+.flexbox(@direction, @color, @box) {
+  display: @flex;
+  flex-direction:  @direction;
+  color: @color;
+  padding: @box;
+}
+
+.dingdong(@font, @color, @border) {
+  font-size: @font;
+  color: @color;
+  border: @border;
+
 }
 
 :root,
@@ -150,57 +185,79 @@ body {
 }
 
 img {
-  width: 100%
+  width: 100%;
 }
 
 
+
+
 header {
-  border: 1px solid black;
+  .dingdong(1.5rem, blue, 3px dotted red);
   display: flex;
   justify-content: space-between;
 
+
+
+
+
   h1 {
-    font-size: 70px;
+    font-size: 20px;
 
-    @media(max-width:500px) {
-      font-size: 3rem
-    }
-  }
-
-  .TK {
-    display: flex;
-    align-items: center;
-
-  }
-
-  nav {
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 30%;
-
-    a {
-      text-decoration: none;
-      color: grey;
+    @media @phone {
+      font-size: 3rem;
+      color: green;
     }
 
   }
 
-  .mylogoo2 {
-    width: 10%;
 
-    @media(max-width:500px) {
-      display: none
+}
+
+.TK {
+  display: flex;
+  align-items: center;
+
+}
+
+nav {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+
+
+  a {
+    text-decoration: none;
+    .darktext();
+
+    &:hover {
+      color: darken(@darkpink, 30%);
+    }
+
+
+
+    @media @phone {
+      color: blue;
     }
   }
 
-  @media(max-width:500px) {
-    flex-direction: column;
-    align-items: center;
+}
 
+.mylogoo2 {
+  width: 10%;
+
+  @media @phone {
+    display: none
   }
+}
+
+@media @phone {
+  flex-direction: column;
+  align-items: center;
+
+}
 }
 
 h3 {
@@ -208,14 +265,15 @@ h3 {
 }
 
 .intro {
-  border: 1px solid green;
+
   margin: 2% 0;
+  font-family: @textfont;
 }
 
 
 
 .skills {
-  border: 1px solid blue;
+
   display: flex;
   justify-content: space-around;
   margin-bottom: 2%;
@@ -233,29 +291,31 @@ ul {
 }
 
 .skills2 {
-  border: 1px solid red;
+
   text-align: center;
 }
 
 
 
 .lastbit {
-  border: 1px solid green;
-  display: flex;
+
+  .flexbox(column, green, 2%);
   text-align: center;
   margin-top: 3%;
 
-  @media(max-width:500px) {
+
+  @media @phone {
     flex-direction: column;
   }
 }
 
-
 .work,
 .Employment,
 .Hobbies {
-  padding: 2%;
+  border: 1px solid black;
+  margin: 1%;
 }
+
 
 footer {
   border: 1px solid black;

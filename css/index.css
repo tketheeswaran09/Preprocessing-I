@@ -127,6 +127,9 @@ table {
   border-spacing: 0;
 }
 /* Set every element's box-sizing to border-box */
+:root {
+  font-size: 32px;
+}
 * {
   box-sizing: border-box;
 }
@@ -140,7 +143,9 @@ img {
   width: 100%;
 }
 header {
-  border: 1px solid black;
+  font-size: 1.5rem;
+  color: blue;
+  border: 3px dotted red;
   display: flex;
   justify-content: space-between;
 }
@@ -157,7 +162,6 @@ header .TK {
   align-items: center;
 }
 header nav {
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -166,7 +170,16 @@ header nav {
 }
 header nav a {
   text-decoration: none;
-  color: grey;
+  color: yellowgreen;
+  font-size: 1.5rem;
+}
+header nav a:hover {
+  color: #000000;
+}
+@media (max-width: 500px) {
+  header nav a {
+    color: blue;
+  }
 }
 header .mylogoo2 {
   width: 10%;
@@ -186,11 +199,9 @@ h3 {
   font-size: 20px;
 }
 .intro {
-  border: 1px solid green;
   margin: 2% 0;
 }
 .skills {
-  border: 1px solid blue;
   display: flex;
   justify-content: space-around;
   margin-bottom: 2%;
@@ -202,12 +213,13 @@ ul {
   list-style: circle;
 }
 .skills2 {
-  border: 1px solid red;
   text-align: center;
 }
 .lastbit {
-  border: 1px solid green;
   display: flex;
+  flex-direction: column;
+  color: green;
+  padding: 2%;
   text-align: center;
   margin-top: 3%;
 }
@@ -219,7 +231,8 @@ ul {
 .work,
 .Employment,
 .Hobbies {
-  padding: 2%;
+  border: 1px solid black;
+  margin: 1%;
 }
 footer {
   border: 1px solid black;
