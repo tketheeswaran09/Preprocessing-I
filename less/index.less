@@ -4,56 +4,319 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
+
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
+
+@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+@textfont: 'Lora', serif;
+
+:root {
+  font-size: 32px;
+}
+
+.redborder() {
+  border: 1px solid red;
+}
+
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+@darkpink: #740023;
+
+.darktext() {
+  color: yellowgreen;
+  font-size: 1.5rem;
 }
 
+@phone: ~"(max-width:500px)"
+
+
+.flexbox(@direction, @color, @box) {
+  display: @flex;
+  flex-direction:  @direction;
+  color: @color;
+  padding: @box;
+}
+
+.dingdong(@font, @color, @border) {
+  font-size: @font;
+  color: @color;
+  border: @border;
+
+}
+
+:root,
+body {
+  height: 100%;
+  padding: 2% 5%;
+  font-size: 16px;
+
+}
+
+img {
+  width: 100%;
+}
+
+
+
+
+header {
+  .dingdong(1.5rem, blue, 3px dotted red);
+  display: flex;
+  justify-content: space-between;
+
+
+
+
+
+  h1 {
+    font-size: 20px;
+
+    @media @phone {
+      font-size: 3rem;
+      color: green;
+    }
+
+  }
+
+
+}
+
+.TK {
+  display: flex;
+  align-items: center;
+
+}
+
+nav {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+
+
+  a {
+    text-decoration: none;
+    .darktext();
+
+    &:hover {
+      color: darken(@darkpink, 30%);
+    }
+
+
+
+    @media @phone {
+      color: blue;
+    }
+  }
+
+}
+
+.mylogoo2 {
+  width: 10%;
+
+  @media @phone {
+    display: none
+  }
+}
+
+@media @phone {
+  flex-direction: column;
+  align-items: center;
+
+}
+}
+
+h3 {
+  font-size: 20px;
+}
+
+.intro {
+
+  margin: 2% 0;
+  font-family: @textfont;
+}
+
+
+
+.skills {
+
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2%;
+
+}
+
+.footy {
+  width: 20%;
+}
+
+
+
+ul {
+  list-style: circle;
+}
+
+.skills2 {
+
+  text-align: center;
+}
+
+
+
+.lastbit {
+
+  .flexbox(column, green, 2%);
+  text-align: center;
+  margin-top: 3%;
+
+
+  @media @phone {
+    flex-direction: column;
+  }
+}
+
+.work,
+.Employment,
+.Hobbies {
+  border: 1px solid black;
+  margin: 1%;
+}
+
+
+footer {
+  border: 1px solid black;
+}
